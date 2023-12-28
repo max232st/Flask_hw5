@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Детали видео</title>
+</head>
+<body>
+    {% if current_video %}
+        <h1>Название: {{ current_video.name }}</h1>
+        <p><b>Режиссер: {{ current_video.author }}</b></p>
+        {% if current_video.description %}
+            <p>Описание: {{ current_video.description }}</p>
+        {% endif %}
+        <p>Жанр: {{ current_video.genre }}</p>
+    {% else %}
+        <h1>Фильм не найден!</h1>
+    {% endif %}
+    <a href="/">На главную</a>
+</body>
+</html>

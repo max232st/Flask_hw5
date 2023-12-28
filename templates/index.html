@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог видео</title>
+</head>
+<body>
+    <h1>Фильмы 2023</h1>
+    {% for video in films %}
+        <p><h2>Название: {{video.name}}</h2></p>
+        <p><b>Режиссер: {{video.author}}</b></p>
+        {% if video.description %}
+        <div>
+            Описание: {{video.description}}
+        </div>
+        {% endif %}
+        <p><i>Жанр: {{video.genre}}</i></p>
+        <a href="/films/{{ video.id }}"><h3>Перейти</h3></a>
+    {% endfor %}
+</body>
+</html>
